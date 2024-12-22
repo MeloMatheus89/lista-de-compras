@@ -1,6 +1,9 @@
+import { verificaListaComprados } from "./verificaListaComprados.js";
+
 const listaComprados = document.getElementById("lista-comprados");
 // variável abaixo criada apenas para garantir o funcionamento do marca desmarca da lista de compras/comprados
 const listaDeComprasTemp = document.getElementById("lista-de-compras");
+// const containerListaCompradosTemp = document.getElementById("container-comprados")
 
 let contador = 0;
 
@@ -42,6 +45,7 @@ export function criarItemDaLista(item) {
       checkboxPersonalizado.classList.add("checked");
       listaComprados.appendChild(itemDaLista);
       itemTitulo.style.textDecoration = "line-through";
+      console.log(listaComprados.childElementCount);
     } else {
       checkboxPersonalizado.classList.remove("checked");
       //criei essa variável lá em cima para garantir que resolvesse o problema de adicionar ou editar o item da lista. Sim... Me parece gambiarra.
@@ -49,6 +53,7 @@ export function criarItemDaLista(item) {
       itemTitulo.style.textDecoration = "none";
       listaDeComprasTemp.appendChild(itemDaLista);
     }
+    verificaListaComprados(listaComprados.childElementCount);
   });
 
   const checkboxPersonalizado = document.createElement("div");

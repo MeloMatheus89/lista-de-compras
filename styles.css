@@ -143,3 +143,8 @@ ul {
   background-color: transparent;
   border: none;
 }
+/* Lembrar de apagar essa merda para ter certeza que eu não quebrei algo que eu não dou conta de reparar
+#container-comprados {
+  background-color: pink;
+  display: none;
+} */
