@@ -1,4 +1,7 @@
-import { verificaListaComprados } from "./verificaListaComprados.js";
+import { editarItem } from "./editarItem.js";
+import { excluirItem } from "./excluirItem.js";
+import { verificarListaComprados } from "./verificarListaComprados.js";
+import { verificarListaVazia } from "./verificarListaVazia.js";
 
 const listaComprados = document.getElementById("lista-comprados");
 // variável abaixo criada apenas para garantir o funcionamento do marca desmarca da lista de compras/comprados
@@ -45,7 +48,6 @@ export function criarItemDaLista(item) {
       checkboxPersonalizado.classList.add("checked");
       listaComprados.appendChild(itemDaLista);
       itemTitulo.style.textDecoration = "line-through";
-      console.log(listaComprados.childElementCount);
     } else {
       checkboxPersonalizado.classList.remove("checked");
       //criei essa variável lá em cima para garantir que resolvesse o problema de adicionar ou editar o item da lista. Sim... Me parece gambiarra.
@@ -53,7 +55,8 @@ export function criarItemDaLista(item) {
       itemTitulo.style.textDecoration = "none";
       listaDeComprasTemp.appendChild(itemDaLista);
     }
-    verificaListaComprados(listaComprados.childElementCount);
+    verificarListaComprados(listaComprados);
+    verificarListaVazia(listaDeComprasTemp);
   });
 
   const checkboxPersonalizado = document.createElement("div");
@@ -84,6 +87,11 @@ export function criarItemDaLista(item) {
   imagemRemover.src = "img/delete.svg";
   imagemRemover.alt = "Remover";
 
+  //
+  botaoRemover.addEventListener("click", function () {
+    excluirItem(itemDaLista);
+  });
+
   botaoRemover.appendChild(imagemRemover);
   containerBotoes.appendChild(botaoRemover);
 
@@ -97,6 +105,10 @@ export function criarItemDaLista(item) {
 
   botaoEditar.appendChild(imagemEditar);
   containerBotoes.appendChild(botaoEditar);
+
+  botaoEditar.addEventListener("click", function () {
+    editarItem(itemDaLista);
+  });
 
   /* Xablau1 vira classe pai do que está dentro dos parênteses. Exemplo:
   container.appendChild(elementoQualquer);
