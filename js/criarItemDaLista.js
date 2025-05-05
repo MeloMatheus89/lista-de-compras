@@ -126,7 +126,7 @@ export function criarItemDaLista(item) {
   containerItemLista.appendChild(containerBotoes);
 
   const itemData = document.createElement("p");
-  //insere o dia da semana, dia e
+  //insere o dia da semana, dia do mês e hora atual no formato pt-BR.
   itemData.innerText = `${new Date().toLocaleDateString("pt-BR", { weekday: "long" })} ${new Date().toLocaleDateString()} às ${new Date().toLocaleTimeString("pt-BR", {
     hour: "numeric",
     minute: "numeric",
