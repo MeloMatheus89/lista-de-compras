@@ -5,15 +5,14 @@ Você está trabalhando em um projeto de lista de tarefas e o arquivo script.js 
 ## Exercício 2: Removendo item fixo da lista de compras
 
 Você trabalha com desenvolvimento web e precisa ajustar uma aplicação de lista de tarefas.
-``
 
- <ul>
+````<ul>
                 <li>
                     <div class="lista-item-container">
                         <div>
                             <div class="container-checkbox">
                         <input type="checkbox" class="input-checkbox" id="checkbox-1" />
-                               
+
                             </div>
                             <p>Comprar ração</p>
                         </div>
@@ -28,11 +27,9 @@ Você trabalha com desenvolvimento web e precisa ajustar uma aplicação de list
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul>```
 
-``
-
-No momento, a lista contém um item fixo ("Comprar ração.": que deve ser removido. Para isso, vamos editar o arquivo index.html e garantir que o item não apareça mais
+No momento, a lista contém um item fixo ("Comprar ração.") que deve ser removido. Para isso, vamos editar o arquivo index.html e garantir que o item não apareça mais
 
 ## Exercício 3: Exibindo mensagem de lista vazia
 
@@ -45,3 +42,4 @@ Você está trabalhando em uma plataforma e precisa melhorar a usabilidade. Uma 
 ## Exercício 5: Personalizando a mensagem de lista vazia
 
 Para tornar a mensagem de lista vazia mais informativa e amigável, você vai personalizá-la para que exiba o nome da lista e uma mensagem encorajadora. Por exemplo, "A lista de tarefas está vazia. Adicione itens para começar!". Faça isso através de uma função JavaScript que verifique se a lista está vazia.
+````
